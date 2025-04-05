@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('equipment', function (Blueprint $table) { 
+        Schema::create('auditoria', function (Blueprint $table) {
             $table->id();
-            $table->string('equipment', 45);
-            $table->string('brand', 45);
-            $table->string('model', 45);
-            $table->boolean('status')->default(true);
+            $table->integer('auditorium_number');
+            $table->integer('capacity');
+            $table->boolean('status');
+            $table->string('location', 100);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('equipment');
+        Schema::dropIfExists('auditoria');
     }
 };

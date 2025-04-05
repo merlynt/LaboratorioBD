@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Screening;
 
-class Equipment extends Model
+class Auditorium extends Model
 {
-    /** @use HasFactory<\Database\Factories\EquipmentFactory> */
+    /** @use HasFactory<\Database\Factories\AuditoriumFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'equipment',
-        'brand',
-        'model',
-        'status'
+        'auditorium_number',
+        'capacity',
+        'status',
+        'Location'
     ];
 
     public function screenings():HasMany

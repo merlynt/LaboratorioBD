@@ -20,7 +20,7 @@ class EquipmentFactory extends Factory
             'equipment'=>fake()->words(1, true),
             'brand'=>fake()->words(1, true),
             'model'=>fake()->words(1, true),
-            'estado'=>fake()->boolean(), 
+            'status'=>fake()->boolean(), 
         ];
     }
 }

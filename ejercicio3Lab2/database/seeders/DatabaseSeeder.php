@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Auditorium;
 use App\Models\Equipment;
+use App\Models\Participant;
+use App\Models\Screening;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,11 +25,11 @@ class DatabaseSeeder extends Seeder
         ]);
  */
         $this->call([
-            MovieSeeder::class
-        ]);
-        
-        $this->call([
-            EquipmentSeeder::class
+            MovieSeeder::class,
+            EquipmentSeeder::class,
+            AuditoriumSeeder::class,
+            ParticipantSeeder::class,
+            ScreeningSeeder::class,
         ]);
     }
 }

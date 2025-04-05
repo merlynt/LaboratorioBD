@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Screening;
 
 class Movie extends Model
 {
@@ -16,4 +18,9 @@ class Movie extends Model
         'duration',
         'publication_date'
     ];
+
+    public function screenings():HasMany
+    {
+        return $this->hasMany(Screening::class);
+    }
 }
