@@ -33,4 +33,9 @@ class Movie extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function formats()
+    {
+        return $this->belongsToMany(Format::class);
+    }
 }

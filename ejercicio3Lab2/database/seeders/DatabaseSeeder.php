@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             JurySeeder::class,
             EvaluationSeeder::class,
             AwardingSeeder::class,
+            FormatSeeder::class,
         ]);
     }
 }
