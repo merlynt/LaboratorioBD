@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Auditorium;
 use App\Models\Equipment;
+use App\Models\Evaluation;
+use App\Models\Jury;
 use App\Models\Participant;
 use App\Models\Screening;
 use App\Models\User;
@@ -30,6 +32,8 @@ class DatabaseSeeder extends Seeder
             AuditoriumSeeder::class,
             ParticipantSeeder::class,
             ScreeningSeeder::class,
+            JurySeeder::class,
+            EvaluationSeeder::class
         ]);
     }
 }

@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Models\Screening;
+use App\Models\Evaluation;
 
-class Movie extends Model
+class Jury extends Model
 {
-    /** @use HasFactory<\Database\Factories\MovieFactory> */
+    /** @use HasFactory<\Database\Factories\JuryFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'synopsis',
-        'duration',
-        'publication_date'
+        'name',
+        'last_name',
+        'profession',
+        'experience',
+        'specialty'
     ];
-
-    public function screenings():HasMany
-    {
-        return $this->hasMany(Screening::class);
-    }
 
     public function evaluations():HasMany
     {
