@@ -38,4 +38,14 @@ class Movie extends Model
     {
         return $this->belongsToMany(Format::class);
     }
+
+    public function filmmakers()
+    {
+        return $this->belongsToMany(Filmmaker::class, 'distributor_filmmaker_movie');
+    }
+
+    public function distributors()
+    {
+        return $this->belongsToMany(Distributor::class, 'distributor_filmmaker_movie');
+    }
 }

@@ -5,8 +5,10 @@ namespace Database\Seeders;
 use App\Models\Auditorium;
 use App\Models\Awarding;
 use App\Models\Category;
+use App\Models\Distributor;
 use App\Models\Equipment;
 use App\Models\Evaluation;
+use App\Models\Filmmaker;
 use App\Models\Jury;
 use App\Models\Participant;
 use App\Models\Screening;
@@ -37,7 +39,6 @@ class DatabaseSeeder extends Seeder
             JurySeeder::class,
             EvaluationSeeder::class,
             AwardingSeeder::class,
-            FormatSeeder::class,
         ]);
     }
 }

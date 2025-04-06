@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Movie;
 use App\Models\Category;
+use App\Models\Distributor;
+use App\Models\Filmmaker;
 use App\Models\Format;
 
 class MovieSeeder extends Seeder
@@ -38,5 +40,27 @@ class MovieSeeder extends Seeder
             );
         });
 
+        //distributor
+
+        $this->call(DistributorSeeder::class);
+
+        $distributors = Distributor::all();
+
+        Movie::factory(5)->create()->each(function ($movie) use ($distributors) {
+            $movie->distributors()->attach(
+                $distributors->random(rand(1, 3))->pluck('id')->toArray()
+            );
+        });
+
+        //filmmaker
+        $this->call(FilmmakerSeeder::class);
+
+        $filmmakers = Filmmaker::all();
+
+        Movie::factory(5)->create()->each(function ($movie) use ($filmmakers) {
+            $movie->filmmakers()->attach(
+                $filmmakers->random(rand(1, 3))->pluck('id')->toArray()
+            );
+        });
     }
 }
