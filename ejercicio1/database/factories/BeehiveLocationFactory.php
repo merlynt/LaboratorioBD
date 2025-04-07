@@ -17,7 +17,7 @@ class BeehiveLocationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'location'=> fake()->address()
         ];
     }
 }

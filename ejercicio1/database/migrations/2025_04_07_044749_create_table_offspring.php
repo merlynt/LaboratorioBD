@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Beehives;
+use App\Models\Queens;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_sanitary_treatment', function (Blueprint $table) {
+        Schema::create('offspring', function (Blueprint $table) {
             $table->id();
-            $table->string('treatment_type',75);
-            $table->date('aplication_date');
-            $table->string('description',100);
-            $table->foreignIdFor(Beehives::class)->constrained();
+            $table->integer('daugther_bees');
+            $table->foreignIdFor(Queens::class);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_sanitary_treatment');
+        Schema::dropIfExists('tabla_offspring');
     }
 };

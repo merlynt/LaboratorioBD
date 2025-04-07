@@ -12,13 +12,13 @@ class Beehives extends Model
     /** @use HasFactory<\Database\Factories\BeehivesFactory> */
     use HasFactory;
     protected $fillable = [
-        'beehive_name',
-        'beehive_location_id',
-        'beekepers_id'
+        'beehive_number',
+        'beehive_locations_id',
+        'beekepers_id',
         ];
-        public function beehive_location():BelongsTo
+        public function beehive_locations():BelongsTo
         {
-        return $this->belongsTo(BeehiveLocation::class);       
+        return $this->belongsTo(Beehive_locations::class);       
         }
         public function beekepers():BelongsTo
         {

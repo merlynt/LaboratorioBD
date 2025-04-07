@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Queens;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Offspring>
@@ -17,7 +18,8 @@ class OffspringFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'daugther_bees' => fake()->numberBetween(1, 10), // cantidad de abejas hijas
+            'queens_id' => Queens::factory()
         ];
     }
 }

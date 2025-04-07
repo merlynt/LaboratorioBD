@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_beehive_location', function (Blueprint $table) {
+        Schema::create('queens', function (Blueprint $table) {
             $table->id();
-            $table->string('location', 50);
-            
+            $table->string('genetic_code',5);
+            $table->string('origin',20);
+            $table->date('birthdate');
+           
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_beehive_location');
+        Schema::dropIfExists('table_queens');
     }
 };

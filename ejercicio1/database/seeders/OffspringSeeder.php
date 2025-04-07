@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Offspring;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class OffspringSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Offspring::factory()->count(10)->create();
     }
 }

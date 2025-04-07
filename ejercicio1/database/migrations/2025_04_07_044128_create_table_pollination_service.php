@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Queens;
 use App\Models\Beehives;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tabla_queens_beehives', function (Blueprint $table) {
+        Schema::create('pollination_service', function (Blueprint $table) {
             $table->id();
-            $table->date('assignment_date');
-            $table->foreignIdFor(Queens::class)->constrained();
+            $table->string('crops',50);
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('conditions');
             $table->foreignIdFor(Beehives::class)->constrained();
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tabla_queens_beehives');
+        Schema::dropIfExists('table_pollination_service');
     }
 };

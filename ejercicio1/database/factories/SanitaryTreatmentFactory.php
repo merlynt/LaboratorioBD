@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Beehives;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Sanitary_treatment>
  */
@@ -17,7 +17,10 @@ class SanitaryTreatmentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'treatment_type' => fake()->randomElement(['limpieza','pesticidas','antibiotico']),
+            'aplication_date' => fake()->date(),
+            'description' => fake()->sentence(), 
+            'beehive_id' => Beehives::factory(),
         ];
     }
 }

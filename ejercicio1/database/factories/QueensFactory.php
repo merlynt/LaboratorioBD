@@ -17,7 +17,9 @@ class QueensFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'genetic_code' => strtoupper(fake()->unique()->bothify('Codigo Genetico-??###')), // Código genético aleatorio de 6 letras
+            'origin' => fake()->randomElement('El Salvador','Usa','Mexico','Guatemala'),
+            'birthdate' => fake()->date(), 
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Queens;
+use App\Models\Production_cycle;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tabla_offspring', function (Blueprint $table) {
+        Schema::create('batches_of_honey', function (Blueprint $table) {
             $table->id();
-            $table->string('daugther_bees',45);
-            $table->foreignIdFor(Queens::class);
+            $table->date('packing_date');
+            $table->decimal('cuantity', 12,2);
+            $table->integer('batch_number');
+            $table->foreignIdFor(Production_cycle::class)->constrained();
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tabla_offspring');
+        Schema::dropIfExists('batches_of_honey');
     }
 };
