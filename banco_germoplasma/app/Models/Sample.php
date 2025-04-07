@@ -1,25 +1,29 @@
 <?php
 
 namespace App\Models;
-use App\Models\Region;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 
 class Sample extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'accession_number',
+        'seed_id',
+        'collection_location',
         'collection_date',
-        'location',
-        'collector_name',
+        'quantity',
         'description'
     ];
 
-    public function region()
+    protected $casts = [
+        'collection_date' => 'date',
+        'quantity' => 'integer'
+    ];
+
+    public function seed()
     {
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Seed::class);
     }
 }
