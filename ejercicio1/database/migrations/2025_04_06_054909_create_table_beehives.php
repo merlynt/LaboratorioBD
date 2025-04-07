@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\Beekeepers;
+use App\Models\BeehiveLocation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Location;
 
 return new class extends Migration
 {
@@ -11,12 +14,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_production_cycle', function (Blueprint $table) {
+        Schema::create('table_beehives', function (Blueprint $table) {
             $table->id();
-            $table->string('production_status',50);
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->foreignIdFor(Beehive::class)->constrained();
+            $table->string('beehive_name',50);
+            $table->foreignIdFor(BeehiveLocation::class)->constrained();
+            $table->foreignIdFor(Beekeepers::class)->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_production_cycle');
+        Schema::dropIfExists('table_beehives');
     }
 };
