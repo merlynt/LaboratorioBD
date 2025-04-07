@@ -47,8 +47,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RegionSeeder::class,
-            SeedSeeder::class, // Primero seeds
-            SampleSeeder::class, // Luego samples
+            SeedSeeder::class,
+            SampleSeeder::class, 
             StorageConditionSeeder::class,
             GerminationHistorySeeder::class,
             BiodiversityMapSeeder::class,

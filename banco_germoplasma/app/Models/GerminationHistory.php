@@ -23,13 +23,13 @@ class GerminationHistory extends Model
         'germination_conditions' => 'array'
     ];
 
-    // Relación con Seed
+   
     public function seed()
     {
         return $this->belongsTo(Seed::class);
     }
 
-    // Método de consulta común
+
     public function scopeSuccessful($query)
     {
         return $query->where('germination_rate', '>', 80);

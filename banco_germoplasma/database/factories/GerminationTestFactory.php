@@ -15,7 +15,7 @@ class GerminationTestFactory extends Factory
     public function definition(): array
     {
         return [
-            'sample_id' => 1, // Asume una muestra existente o  crear una factory para Sample
+            'sample_id' => 1, // Asume una muestra existente
             'test_date' => $this->faker->date(),
             'germinated_seeds' => $this->faker->numberBetween(10, 90),
             'total_seeds' => 100,

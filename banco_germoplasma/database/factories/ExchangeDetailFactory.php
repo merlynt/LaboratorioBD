@@ -13,7 +13,7 @@ class ExchangeDetailFactory extends Factory
     public function definition(): array
     {
         return [
-            'exchange_id' => Exchange::factory(), // Crea un Exchange asociado
+            'exchange_id' => Exchange::factory(), 
             'detail' => $this->faker->sentence(),
         ];
     }

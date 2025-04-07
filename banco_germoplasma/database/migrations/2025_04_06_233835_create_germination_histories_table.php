@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('germination_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('seed_id')->constrained(); // Cambiado de seed_lot_id a seed_id
+            $table->foreignId('seed_id')->constrained();
             $table->date('test_date');
             $table->float('germination_rate');
             $table->json('germination_conditions');

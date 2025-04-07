@@ -9,6 +9,6 @@ class Institution extends Model
 {
     use HasFactory;
 
-    // Permitir asignación masiva de estos campos
+    
     protected $fillable = ['name', 'description'];
 }

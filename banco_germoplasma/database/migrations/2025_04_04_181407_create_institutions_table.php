@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('institutions', function (Blueprint $table) {
-            $table->id(); // Columna para la clave primaria
-            $table->string('name'); // Nombre de la institución
-            $table->text('description'); // Descripción de la institución
-            $table->timestamps(); // created_at y updated_at automáticamente
+            $table->id();
+            $table->string('name'); 
+            $table->text('description'); 
+            $table->timestamps(); 
         });
     }
 
