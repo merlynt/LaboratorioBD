@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name', 45);
             $table->date('birth_date');
             $table->string('phone', 45);
-            $table->string('email', 75);
+            $table->string('email', 75)->unique();
             $table->timestamps();
         });
     }
