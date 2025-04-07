@@ -13,6 +13,6 @@ class FilmmakerSeeder extends Seeder
      */
     public function run(): void
     {
-        Filmmaker::factory(5)->create();
+        Filmmaker::factory(25)->create();
     }
 }

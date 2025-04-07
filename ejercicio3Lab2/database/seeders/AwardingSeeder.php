@@ -13,6 +13,6 @@ class AwardingSeeder extends Seeder
      */
     public function run(): void
     {
-        Awarding::factory(5)->create();
+        Awarding::factory(10)->create();
     }
 }

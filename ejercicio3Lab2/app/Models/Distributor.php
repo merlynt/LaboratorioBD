@@ -22,6 +22,7 @@ class Distributor extends Model
     {
         return $this->belongsToMany(Movie::class, 'distributor_filmmaker_movie');
     }
+    
     public function filmmakers()
     {
         return $this->belongsToMany(Filmmaker::class, 'distributor_filmmaker_movie');

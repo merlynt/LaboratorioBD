@@ -14,6 +14,6 @@ class DistributorSeeder extends Seeder
      */
     public function run(): void
     {
-        Distributor::factory(5)->create();
+        Distributor::factory(10)->create();
     }
 }

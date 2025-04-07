@@ -13,6 +13,6 @@ class AuditoriumSeeder extends Seeder
      */
     public function run(): void
     {
-        Auditorium::factory(5)->create();
+        Auditorium::factory(10)->create();
     }
 }

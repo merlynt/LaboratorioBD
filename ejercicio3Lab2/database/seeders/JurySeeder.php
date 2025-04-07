@@ -13,6 +13,6 @@ class JurySeeder extends Seeder
      */
     public function run(): void
     {
-        Jury::factory(5)->create();
+        Jury::factory(15)->create();
     }
 }
