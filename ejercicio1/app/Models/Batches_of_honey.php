@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-class Batches_of_honey extends Model
+class Batches_of_Honey extends Model
 {
+    /** @use HasFactory<\Database\Factories\BatchesOfHoneyFactory> */
+    use HasFactory;
     protected $fillable = [
         'packing_date',
         'cuantity',
