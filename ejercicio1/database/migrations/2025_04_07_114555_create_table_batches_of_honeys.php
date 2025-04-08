@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Production_cycle;
+use App\Models\ProductionCycle;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('batches_of_honey', function (Blueprint $table) {
+        Schema::create('batches_of_honeys', function (Blueprint $table) {
             $table->id();
             $table->date('packing_date');
             $table->decimal('cuantity', 12,2);
             $table->integer('batch_number');
-            $table->foreignIdFor(Production_cycle::class)->constrained();
+            $table->foreignIdFor(ProductionCycle::class)->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('batches_of_honey');
+        Schema::dropIfExists('batches_of_honeys');
     }
 };

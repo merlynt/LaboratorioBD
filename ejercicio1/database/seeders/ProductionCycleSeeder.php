@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Production_cycle;
+use App\Models\ProductionCycle;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class ProductionCycleSeeder extends Seeder
      */
     public function run(): void
     {
-        Production_cycle::factory()->count(10)->create();
+        ProductionCycle::factory()->count(10)->create();
     }
 }

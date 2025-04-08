@@ -19,7 +19,7 @@ class OffspringFactory extends Factory
     {
         return [
             'daugther_bees' => fake()->numberBetween(1, 10), // cantidad de abejas hijas
-            'queens_id' => Queens::factory()
+            'queens_id' => rand(1,10)
         ];
     }
 }

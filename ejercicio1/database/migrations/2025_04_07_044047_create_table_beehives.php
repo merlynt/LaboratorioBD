@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Beehive_locations;
+use App\Models\BeehiveLocation;
 use App\Models\Beekeepers;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('beehives', function (Blueprint $table) {
             $table->id();
             $table->integer('beehive_number');
-            $table->foreignIdFor(Beehive_locations::class)->constrained();
+         $table->foreignIdFor(BeehiveLocation::class)->constrained();
             $table->foreignIdFor(Beekeepers::class)->constrained();
             $table->timestamps();
         });

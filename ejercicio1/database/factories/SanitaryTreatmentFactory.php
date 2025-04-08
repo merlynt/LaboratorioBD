@@ -20,7 +20,7 @@ class SanitaryTreatmentFactory extends Factory
             'treatment_type' => fake()->randomElement(['limpieza','pesticidas','antibiotico']),
             'aplication_date' => fake()->date(),
             'description' => fake()->sentence(), 
-            'beehive_id' => Beehives::factory(),
+            'beehives_id' => Beehives::factory(),
         ];
     }
 }

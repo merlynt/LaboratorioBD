@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('beehive_locations', function (Blueprint $table) {
             $table->id();
-            $table->string('location', 50);
+            $table->string('location', 100);
             
             $table->timestamps();
         });

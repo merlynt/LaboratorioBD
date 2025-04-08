@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('queens', function (Blueprint $table) {
             $table->id();
-            $table->string('genetic_code',5);
-            $table->string('origin',20);
+            $table->string('genetic_code',100);
+            $table->string('origin',50);
             $table->date('birthdate');
            
             $table->timestamps();

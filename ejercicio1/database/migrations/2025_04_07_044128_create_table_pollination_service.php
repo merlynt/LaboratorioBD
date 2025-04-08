@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pollination_service', function (Blueprint $table) {
+        Schema::create('pollination_services', function (Blueprint $table) {
             $table->id();
             $table->string('crops',50);
             $table->date('start_date');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_pollination_service');
+        Schema::dropIfExists('pollination_services');
     }
 };

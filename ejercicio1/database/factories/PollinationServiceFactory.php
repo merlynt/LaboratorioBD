@@ -4,11 +4,15 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Beehives;
+use App\Models\PollinationService;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pollination_service>
  */
 class PollinationServiceFactory extends Factory
 {
+    protected $model =PollinationService::class;
+    
     /**
      * Define the model's default state.
      *
@@ -21,7 +25,7 @@ class PollinationServiceFactory extends Factory
             $start_date='start_date' =>fake()->date(),
             'end_date' => fake()->dateTimeBetween($start_date, '+10 days')->format('Y-m-d'),
             'conditions' => fake()->sentence, // Condiciones para la polinización
-            'beehives_id' => Beehives::factory(),
+            'beehives_id' => Beehives::factory()
         ];
     }
 }

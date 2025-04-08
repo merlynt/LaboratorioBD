@@ -26,7 +26,7 @@ class ProductionCycleFactory extends Factory
             'production_status' => fake()->randomElement(['pendiente', 'en progreso', 'completado']),
             'start_date' => $startDate,
             'end_date' => $endDate,
-            'beehives_id' => Beehives::factory()
-        ];
+            'beehives_id' => Beehives::factory()     
+         ];
     }
 }

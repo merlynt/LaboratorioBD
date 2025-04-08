@@ -3,7 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use app\Models\BeehiveLocation;
+use app\Models\Beehive_locations;
+use App\Models\BeehiveLocation;
 use app\Models\Beekeepers;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Beehives>
@@ -18,9 +19,9 @@ class BeehivesFactory extends Factory
     public function definition(): array
     {
         return [
-            'beehive_number' => strtoupper(fake()->unique()->bothify('Colmena Numero-####')),
+            'beehive_number' => strtoupper(fake()->unique()->bothify('####')),
             'beehive_location_id' => BeehiveLocation::factory(),
-            'beekepers_id' => Beekeepers::factory()
+            'beekeepers_id' => Beekeepers::factory()
         ];
     }
 }

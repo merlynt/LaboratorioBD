@@ -2,13 +2,15 @@
 
 namespace Database\Factories;
 
+use App\Models\BeehiveLocation;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BeehiveLocation>
- */
+
 class BeehiveLocationFactory extends Factory
 {
+    protected $model =BeehiveLocation::class;
+    
     /**
      * Define the model's default state.
      *
@@ -16,6 +18,7 @@ class BeehiveLocationFactory extends Factory
      */
     public function definition(): array
     {
+       
         return [
             'location'=> fake()->address()
         ];

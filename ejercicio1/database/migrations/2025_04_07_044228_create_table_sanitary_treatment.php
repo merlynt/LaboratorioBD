@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sanitary_treatment', function (Blueprint $table) {
+        Schema::create('sanitary_treatments', function (Blueprint $table) {
             $table->id();
             $table->string('treatment_type',75);
             $table->date('aplication_date');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_sanitary_treatment');
+        Schema::dropIfExists('table_sanitary_treatments');
     }
 };
